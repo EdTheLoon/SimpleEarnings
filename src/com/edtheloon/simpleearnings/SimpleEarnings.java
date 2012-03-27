@@ -226,7 +226,6 @@ public class SimpleEarnings extends javax.swing.JFrame {
         grossPay = totalHours * payRate;
         taxPaid = (grossPay - (taxAllowance / 12)) * taxRate;
         netPay = grossPay - taxPaid - otherDeductions;
-        //Test Line
     }
     
     public void displayEarnings() {
