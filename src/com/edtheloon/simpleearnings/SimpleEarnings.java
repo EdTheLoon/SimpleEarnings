@@ -107,7 +107,7 @@ public class SimpleEarnings extends javax.swing.JFrame {
         txtTaxAllowance.setToolTipText("Your tax allowance");
         txtTaxAllowance.setNextFocusableComponent(txtTaxRate);
 
-        lblTaxRate.setText("Tax Rate (eg 0.2)");
+        lblTaxRate.setText("Tax Rate (eg 0.25)");
 
         txtTaxRate.setToolTipText("Your tax rate. 25% should be entered as 0.25");
         txtTaxRate.setNextFocusableComponent(txtOtherDeductions);
@@ -139,7 +139,7 @@ public class SimpleEarnings extends javax.swing.JFrame {
                         .addComponent(lblHoursWeek4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtHoursWeek4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblPayRate)
                     .addComponent(lblTaxAllowance)
@@ -213,7 +213,7 @@ public class SimpleEarnings extends javax.swing.JFrame {
                 .addComponent(btnCalculate)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblResults)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         pack();
