@@ -31,70 +31,31 @@ public class SimpleEarnings extends javax.swing.JFrame {
     private void initComponents() {
 
         lblInfo = new javax.swing.JLabel();
-        lblHoursWeek1 = new javax.swing.JLabel();
-        lblHoursWeek2 = new javax.swing.JLabel();
-        lblHoursWeek3 = new javax.swing.JLabel();
-        lblHoursWeek4 = new javax.swing.JLabel();
-        txtHoursWeek1 = new javax.swing.JTextField();
-        txtHoursWeek2 = new javax.swing.JTextField();
-        txtHoursWeek3 = new javax.swing.JTextField();
-        txtHoursWeek4 = new javax.swing.JTextField();
-        lblPayRate = new javax.swing.JLabel();
-        lblTaxAllowance = new javax.swing.JLabel();
-        lblOtherDeductions = new javax.swing.JLabel();
-        txtTaxAllowance = new javax.swing.JTextField();
-        txtPayRate = new javax.swing.JTextField();
-        lblTaxRate = new javax.swing.JLabel();
-        txtTaxRate = new javax.swing.JTextField();
-        txtOtherDeductions = new javax.swing.JTextField();
         btnCalculate = new javax.swing.JButton();
         lblResults = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        lblHoursWeek1 = new javax.swing.JLabel();
+        txtHoursWeek1 = new javax.swing.JTextField();
+        lblHoursWeek2 = new javax.swing.JLabel();
+        txtHoursWeek2 = new javax.swing.JTextField();
+        lblHoursWeek3 = new javax.swing.JLabel();
+        txtHoursWeek3 = new javax.swing.JTextField();
+        lblHoursWeek4 = new javax.swing.JLabel();
+        txtHoursWeek4 = new javax.swing.JTextField();
+        lblPayRate = new javax.swing.JLabel();
+        txtPayRate = new javax.swing.JTextField();
+        lblTaxAllowance = new javax.swing.JLabel();
+        txtTaxAllowance = new javax.swing.JTextField();
+        lblTaxRate = new javax.swing.JLabel();
+        txtTaxRate = new javax.swing.JTextField();
+        lblOtherDeductions = new javax.swing.JLabel();
+        txtOtherDeductions = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Simple Earnings Calculator");
         setName("mainFrame");
 
         lblInfo.setText("<html><center>This Java application uses data you provide to calculate your earnings. It calculates your gross pay, tax paid and net pay.</center>");
-
-        lblHoursWeek1.setText("Hours (Wk 1)");
-
-        lblHoursWeek2.setText("Hours (Wk 2)");
-
-        lblHoursWeek3.setText("Hours (Wk 3)");
-
-        lblHoursWeek4.setText("Hours (Wk 4)");
-
-        txtHoursWeek1.setToolTipText("The amount of hours you worked in week 1");
-        txtHoursWeek1.setNextFocusableComponent(txtHoursWeek2);
-
-        txtHoursWeek2.setToolTipText("The amount of hours you worked in week 2");
-        txtHoursWeek2.setNextFocusableComponent(txtHoursWeek3);
-
-        txtHoursWeek3.setToolTipText("The amount of hours you worked in week 3");
-        txtHoursWeek3.setNextFocusableComponent(txtHoursWeek4);
-
-        txtHoursWeek4.setToolTipText("The amount of hours you worked in week 4");
-        txtHoursWeek4.setNextFocusableComponent(txtPayRate);
-
-        lblPayRate.setText("Pay Rate");
-
-        lblTaxAllowance.setText("Tax Allowance");
-
-        lblOtherDeductions.setText("Other Deductions");
-
-        txtTaxAllowance.setToolTipText("Your tax allowance");
-        txtTaxAllowance.setNextFocusableComponent(txtTaxRate);
-
-        txtPayRate.setToolTipText("Your rate of pay");
-        txtPayRate.setNextFocusableComponent(txtTaxAllowance);
-
-        lblTaxRate.setText("Tax Rate (eg 0.2)");
-
-        txtTaxRate.setToolTipText("Your tax rate. 25% should be entered as 0.25");
-        txtTaxRate.setNextFocusableComponent(txtOtherDeductions);
-
-        txtOtherDeductions.setToolTipText("Any other deductions such as G.A.Y.E");
-        txtOtherDeductions.setNextFocusableComponent(btnCalculate);
 
         btnCalculate.setText("Calculate");
         btnCalculate.setToolTipText("Calculate your earnings");
@@ -109,6 +70,125 @@ public class SimpleEarnings extends javax.swing.JFrame {
         lblResults.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblResults.setText("Input your data and then press 'Calculate'");
 
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Details"));
+
+        lblHoursWeek1.setText("Hours (Wk 1)");
+
+        txtHoursWeek1.setToolTipText("The amount of hours you worked in week 1");
+        txtHoursWeek1.setNextFocusableComponent(txtHoursWeek2);
+
+        lblHoursWeek2.setText("Hours (Wk 2)");
+
+        txtHoursWeek2.setToolTipText("The amount of hours you worked in week 2");
+        txtHoursWeek2.setNextFocusableComponent(txtHoursWeek3);
+
+        lblHoursWeek3.setText("Hours (Wk 3)");
+
+        txtHoursWeek3.setToolTipText("The amount of hours you worked in week 3");
+        txtHoursWeek3.setNextFocusableComponent(txtHoursWeek4);
+        txtHoursWeek3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtHoursWeek3ActionPerformed(evt);
+            }
+        });
+
+        lblHoursWeek4.setText("Hours (Wk 4)");
+
+        txtHoursWeek4.setToolTipText("The amount of hours you worked in week 4");
+        txtHoursWeek4.setNextFocusableComponent(txtPayRate);
+
+        lblPayRate.setText("Pay Rate");
+
+        txtPayRate.setToolTipText("Your rate of pay");
+        txtPayRate.setNextFocusableComponent(txtTaxAllowance);
+
+        lblTaxAllowance.setText("Tax Allowance");
+
+        txtTaxAllowance.setToolTipText("Your tax allowance");
+        txtTaxAllowance.setNextFocusableComponent(txtTaxRate);
+
+        lblTaxRate.setText("Tax Rate (eg 0.2)");
+
+        txtTaxRate.setToolTipText("Your tax rate. 25% should be entered as 0.25");
+        txtTaxRate.setNextFocusableComponent(txtOtherDeductions);
+
+        lblOtherDeductions.setText("Other Deductions");
+
+        txtOtherDeductions.setToolTipText("Any other deductions such as G.A.Y.E");
+        txtOtherDeductions.setNextFocusableComponent(btnCalculate);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblHoursWeek1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtHoursWeek1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblHoursWeek2)
+                            .addComponent(lblHoursWeek3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtHoursWeek3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtHoursWeek2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblHoursWeek4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtHoursWeek4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblPayRate)
+                    .addComponent(lblTaxAllowance)
+                    .addComponent(lblTaxRate)
+                    .addComponent(lblOtherDeductions))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtPayRate, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtTaxAllowance, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtTaxRate, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtOtherDeductions, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPayRate)
+                    .addComponent(txtPayRate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTaxAllowance)
+                    .addComponent(txtTaxAllowance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTaxRate)
+                    .addComponent(txtTaxRate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtOtherDeductions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblOtherDeductions)))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblHoursWeek1)
+                    .addComponent(txtHoursWeek1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblHoursWeek2)
+                    .addComponent(txtHoursWeek2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblHoursWeek3)
+                    .addComponent(txtHoursWeek3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblHoursWeek4)
+                    .addComponent(txtHoursWeek4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -117,38 +197,9 @@ public class SimpleEarnings extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblResults, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCalculate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblHoursWeek4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtHoursWeek4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblHoursWeek3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtHoursWeek3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblHoursWeek2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtHoursWeek2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblHoursWeek1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtHoursWeek1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblPayRate)
-                            .addComponent(lblTaxAllowance)
-                            .addComponent(lblTaxRate)
-                            .addComponent(lblOtherDeductions))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtPayRate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
-                            .addComponent(txtTaxAllowance, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtTaxRate, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtOtherDeductions))))
+                    .addComponent(btnCalculate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -156,35 +207,13 @@ public class SimpleEarnings extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblHoursWeek1)
-                    .addComponent(txtHoursWeek1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPayRate)
-                    .addComponent(txtPayRate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblHoursWeek2)
-                    .addComponent(txtHoursWeek2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTaxAllowance)
-                    .addComponent(txtTaxAllowance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblHoursWeek3)
-                    .addComponent(txtHoursWeek3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTaxRate)
-                    .addComponent(txtTaxRate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblHoursWeek4)
-                    .addComponent(txtHoursWeek4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtOtherDeductions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblOtherDeductions))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnCalculate)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblResults)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         pack();
@@ -198,6 +227,10 @@ public class SimpleEarnings extends javax.swing.JFrame {
         // Display earnings
         displayEarnings();
     }//GEN-LAST:event_btnCalculateActionPerformed
+
+    private void txtHoursWeek3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHoursWeek3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtHoursWeek3ActionPerformed
 
     // Member variables
     private Double hoursWk1, hoursWk2, hoursWk3, hoursWk4, payRate, taxRate,
@@ -279,6 +312,7 @@ public class SimpleEarnings extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalculate;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblHoursWeek1;
     private javax.swing.JLabel lblHoursWeek2;
     private javax.swing.JLabel lblHoursWeek3;
